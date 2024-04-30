@@ -27,6 +27,8 @@ public class ExchangeRatesRequestController extends ClientRequestController {
     private final ExchangeRatesSupplier exchangeRatesSupplier;
 
     /**
+     * Initializes client socket on which request will be handled
+     * and exchange rates supplier which will provide the set of currencies.
      * @param clientSocket socket from which request got
      * @param exchangeRatesSupplier interface which supplies exchange rates
      * @throws NullPointerException if clientSocket or exchangeRatesSupplier is null
