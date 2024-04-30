@@ -11,6 +11,13 @@ import java.math.BigDecimal;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+/**
+ * Supplies exchange rates based on data provided at the following URL:
+ * <a href="https://www.cbr.ru/eng/currency_base/daily/">https://www.cbr.ru/eng/currency_base/daily/</a>.
+ * @see ExchangeRatesSupplier
+ * @since 19.0.1
+ * @author Evseev Dmitry
+ */
 public class ExchangeRatesSupplierJsoupCbrRu implements ExchangeRatesSupplier {
 
     private static final String CBR_RU_URL = "https://www.cbr.ru/eng/currency_base/daily/";
@@ -36,6 +43,11 @@ public class ExchangeRatesSupplierJsoupCbrRu implements ExchangeRatesSupplier {
                 .get();
     }
 
+    /**
+     * Supplies exchange rates, which are presented at the following URL:
+     * <a href="https://www.cbr.ru/eng/currency_base/daily/">https://www.cbr.ru/eng/currency_base/daily/</a>.
+     * @return the set of currencies
+     */
     @Override
     public Set<Currency> getAll() {
         Elements currenciesTable = selectCurrenciesTable();
